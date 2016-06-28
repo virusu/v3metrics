@@ -4,9 +4,10 @@
  *
  * This is programatically created and updated, do not modify
  *
- * context: {"env":"production","urlBasePath":"","sourceMaps":false,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
+ * context: {"env":"development","urlBasePath":"/zwk","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
  * includes code from:
  *  - console@1.0.0
+ *  - dev_mode@1.0.0
  *  - elasticsearch@1.0.0
  *  - kbn_doc_views@1.0.0
  *  - kbn_vislib_vis_types@1.0.0
@@ -17,15 +18,18 @@
  *  - status_page@1.0.0
  *  - table_vis@1.0.0
  *  - tests_bundle@0.0.0
+ *  - tr-k4p-clock@0.4.0
  *
  */
 
 require('ui/chrome');
 require('plugins/kibana/kibana');
+require('plugins/tr-k4p-clock/clock');
 require('plugins/kbn_vislib_vis_types/kbn_vislib_vis_types');
 require('plugins/markdown_vis/markdown_vis');
 require('plugins/metric_vis/metric_vis');
 require('plugins/table_vis/table_vis');
+require('plugins/dev_mode/vis_debug_spy_panel');
 require('plugins/spy_modes/table_spy_mode');
 require('plugins/spy_modes/req_resp_stats_spy_mode');
 require('plugins/kbn_doc_views/kbn_doc_views');
