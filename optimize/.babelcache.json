@@ -16691,5 +16691,33 @@
       ]
     },
     "mtime": 1467036622805
+  },
+  "{\"filename\":\"/home/vio/v3metrics/installedPlugins/tr-k4p-clock/index.js\",\"extra\":{},\"env\":{},\"retainLines\":false,\"nonStandard\":false,\"experimental\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"stage\":1,\"blacklist\":[\"regenerator\"],\"optional\":[\"asyncToGenerator\"],\"modules\":\"common\",\"moduleIds\":false,\"jsxPragma\":\"React.createElement\",\"plugins\":[],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"keepModuleIdExtensions\":false,\"auxiliaryCommentAfter\":\"\",\"externalHelpers\":false,\"metadataUsedHelpers\":false,\"breakConfig\":false,\"sourceType\":\"module\"}:5.8.38": {
+    "metadata": {
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      },
+      "usedHelpers": []
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nmodule.exports = function (kibana) {\n\t// Return a new instance of kibana.Plugin that holds\n\t// information about this plugin.\n\treturn new kibana.Plugin({\n\t\t// We have some ui components, that we need to describe\n\t\tuiExports: {\n\t\t\t// Register our visualizations (a plugin can have multiple visualizations)\n\t\t\tvisTypes: ['plugins/tr-k4p-clock/clock']\n\t\t}\n\t});\n};\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3Zpby92M21ldHJpY3MvaW5zdGFsbGVkUGx1Z2lucy90ci1rNHAtY2xvY2svaW5kZXguanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxNQUFNLENBQUMsT0FBTyxHQUFHLFVBQVMsTUFBTSxFQUFFOzs7QUFHakMsUUFBTyxJQUFJLE1BQU0sQ0FBQyxNQUFNLENBQUM7O0FBRXhCLFdBQVMsRUFBRTs7QUFFVixXQUFRLEVBQUUsQ0FDVCw0QkFBNEIsQ0FDNUI7R0FDRDtFQUNELENBQUMsQ0FBQztDQUNILENBQUMiLCJmaWxlIjoiL2hvbWUvdmlvL3YzbWV0cmljcy9pbnN0YWxsZWRQbHVnaW5zL3RyLWs0cC1jbG9jay9pbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gZnVuY3Rpb24oa2liYW5hKSB7XG5cdC8vIFJldHVybiBhIG5ldyBpbnN0YW5jZSBvZiBraWJhbmEuUGx1Z2luIHRoYXQgaG9sZHNcblx0Ly8gaW5mb3JtYXRpb24gYWJvdXQgdGhpcyBwbHVnaW4uXG5cdHJldHVybiBuZXcga2liYW5hLlBsdWdpbih7XG5cdFx0Ly8gV2UgaGF2ZSBzb21lIHVpIGNvbXBvbmVudHMsIHRoYXQgd2UgbmVlZCB0byBkZXNjcmliZVxuXHRcdHVpRXhwb3J0czoge1xuXHRcdFx0Ly8gUmVnaXN0ZXIgb3VyIHZpc3VhbGl6YXRpb25zIChhIHBsdWdpbiBjYW4gaGF2ZSBtdWx0aXBsZSB2aXN1YWxpemF0aW9ucylcblx0XHRcdHZpc1R5cGVzOiBbXG5cdFx0XHRcdCdwbHVnaW5zL3RyLWs0cC1jbG9jay9jbG9jaydcblx0XHRcdF1cblx0XHR9XG5cdH0pO1xufTsiXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "/home/vio/v3metrics/installedPlugins/tr-k4p-clock/index.js"
+      ],
+      "names": [],
+      "mappings": ";;AAAA,MAAM,CAAC,OAAO,GAAG,UAAS,MAAM,EAAE;;;AAGjC,QAAO,IAAI,MAAM,CAAC,MAAM,CAAC;;AAExB,WAAS,EAAE;;AAEV,WAAQ,EAAE,CACT,4BAA4B,CAC5B;GACD;EACD,CAAC,CAAC;CACH,CAAC",
+      "file": "/home/vio/v3metrics/installedPlugins/tr-k4p-clock/index.js",
+      "sourcesContent": [
+        "module.exports = function(kibana) {\n\t// Return a new instance of kibana.Plugin that holds\n\t// information about this plugin.\n\treturn new kibana.Plugin({\n\t\t// We have some ui components, that we need to describe\n\t\tuiExports: {\n\t\t\t// Register our visualizations (a plugin can have multiple visualizations)\n\t\t\tvisTypes: [\n\t\t\t\t'plugins/tr-k4p-clock/clock'\n\t\t\t]\n\t\t}\n\t});\n};"
+      ]
+    },
+    "mtime": 1466504850514
   }
 }
