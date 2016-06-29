@@ -9,7 +9,7 @@ webpackJsonp([0],{
 	 *
 	 * This is programatically created and updated, do not modify
 	 *
-	 * context: {"env":"development","urlBasePath":"/zyj","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
+	 * context: {"env":"development","urlBasePath":"/olz","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
 	 * includes code from:
 	 *  - console@1.0.0
 	 *  - dev_mode@1.0.0
@@ -23,6 +23,7 @@ webpackJsonp([0],{
 	 *  - status_page@1.0.0
 	 *  - table_vis@1.0.0
 	 *  - tests_bundle@0.0.0
+	 *  - timelion@5.0.0-alpha4
 	 *  - tr-k4p-clock@0.4.0
 	 *
 	 */
