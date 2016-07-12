@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 /******/
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"0":"console","1":"kibana","2":"sense-tests","3":"status_page","5":"timelion"}[chunkId]||chunkId) + ".bundle.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"0":"console","1":"kibana","2":"sense-tests","3":"status_page","5":"timelion","7":"elasticsearch_status"}[chunkId]||chunkId) + ".bundle.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/olz/bundles/";
+/******/ 	__webpack_require__.p = "/rpf/bundles/";
 /******/ })
 /************************************************************************/
 /******/ ([
