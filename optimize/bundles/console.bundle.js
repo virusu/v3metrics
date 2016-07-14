@@ -9,7 +9,7 @@ webpackJsonp([0],{
 	 *
 	 * This is programatically created and updated, do not modify
 	 *
-	 * context: {"env":"development","urlBasePath":"/rpf","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
+	 * context: {"env":"development","urlBasePath":"/hfq","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
 	 * includes code from:
 	 *  - console@1.0.0
 	 *  - dev_mode@1.0.0

@@ -9,7 +9,7 @@ webpackJsonp([7],{
 	 *
 	 * This is programatically created and updated, do not modify
 	 *
-	 * context: {"env":"development","urlBasePath":"/rpf","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
+	 * context: {"env":"development","urlBasePath":"/hfq","sourceMaps":true,"kbnVersion":"5.0.0-alpha4","buildNum":8467}
 	 * includes code from:
 	 *  - console@1.0.0
 	 *  - dev_mode@1.0.0
@@ -234,6 +234,10 @@ webpackJsonp([7],{
 	
 	var _templatesDetailHtml2 = _interopRequireDefault(_templatesDetailHtml);
 	
+	var _templatesNcommitsHtml = __webpack_require__(2003);
+	
+	var _templatesNcommitsHtml2 = _interopRequireDefault(_templatesNcommitsHtml);
+	
 	_uiRoutes2['default'].enable();
 	_uiRoutes2['default'].when('/', {
 	  template: _templatesIndexHtml2['default'],
@@ -242,6 +246,10 @@ webpackJsonp([7],{
 	}).when('/index/:name', {
 	  template: _templatesDetailHtml2['default'],
 	  controller: 'elasticsearchDetailController',
+	  controllerAs: 'ctrl'
+	}).when('/ncommits', {
+	  template: _templatesNcommitsHtml2['default'],
+	  controller: 'elasticsearchNCommitsController',
 	  controllerAs: 'ctrl'
 	});
 	
@@ -259,6 +267,12 @@ webpackJsonp([7],{
 	  $http.get('../api/elasticsearch_status/index/' + this.index).then(function (response) {
 	    _this2.status = response.data;
 	  });
+	}).controller('elasticsearchNCommitsController', function ($http) {
+	  var _this3 = this;
+	
+	  $http.get('../api/elasticsearch_status/ncommits').then(function (response) {
+	    _this3.ncommits = response.data;
+	  });
 	});
 
 /***/ },
@@ -273,7 +287,7 @@ webpackJsonp([7],{
 /***/ 2001:
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12-sm\">\n      <h1>Elasticsearch Status</h1>\n      <ul class=\"indexList\">\n        <li ng-repeat=\"index in ctrl.indices\">\n          <a href=\"#/index/{{index}}\">{{ index }}</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n"
+	module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12-sm\">\n      <h1>Elasticsearch Status</h1>\n      <a href=\"#/ncommits\">Number of commits in commits_index</a>\n      <ul class=\"indexList\">\n        <li ng-repeat=\"index in ctrl.indices\">\n          <a href=\"#/index/{{index}}\">{{ index }}</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</div>\n"
 
 /***/ },
 
@@ -281,6 +295,13 @@ webpackJsonp([7],{
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12-sm\">\n\t\t\t<a href=\"#/\">Index list</a>\n      <h1>Index: {{ ctrl.index }}</h1>\n\t\t\t<pre>{{ ctrl.status | json }}</pre>\n    </div>\n  </div>\n</div>\n"
+
+/***/ },
+
+/***/ 2003:
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12-sm\">\n\t\t\t<a href=\"#/\">Index list</a>\n      <h1>Number of commits in commits_index: {{ ctrl.ncommits }}</h1>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }
 
