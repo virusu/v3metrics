@@ -88,7 +88,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/mlw/bundles/";
+/******/ 	__webpack_require__.p = "/pdg/bundles/";
 /******/ })
 /************************************************************************/
 /******/ ([

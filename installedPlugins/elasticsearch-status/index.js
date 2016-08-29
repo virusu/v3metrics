@@ -2,7 +2,7 @@ import api from './server/routes';
 
 export default function (kibana) {
   return new kibana.Plugin({
-    require: ['elasticsearch'], ['jquery'],
+    require: ['elasticsearch'],
 
     uiExports: {
       // Register the app component of our plugin to uiExports

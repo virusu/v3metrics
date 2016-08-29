@@ -1,0 +1,1 @@
+var $ = window.THREE = window.$ = module.exports = require('node_modules/three/build/three.min.js');

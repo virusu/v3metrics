@@ -5,6 +5,10 @@ define(function(require) {
 	// Include our custom CSS (LESS also works)
 	require('plugins/tr-k4p-clock/clock.css');
 
+var lodash = require ('lodash');
+var output = lodash.without([1, 2, 3], 1);
+console.log(output);
+
 	// Create an Angular module for this plugin
 	var module = require('ui/modules').get('tr-k4p-clock');
 	// Add a controller to this module
