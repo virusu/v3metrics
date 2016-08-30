@@ -1,3 +1,4 @@
+
 // public parts of the plugin (i.e. parts that reside in the public folder and will be transfered to the client)
 // must be AMD modules (RequireJS)
 define(function(require) {
@@ -5,9 +6,15 @@ define(function(require) {
 	// Include our custom CSS (LESS also works)
 	require('plugins/tr-k4p-clock/clock.css');
 
-var lodash = require ('lodash');
-var output = lodash.without([1, 2, 3], 1);
-console.log(output);
+	//checking a random external module, to see if it works #TODO: delete
+	//note: lodash module behaves 'good'; it exports objects, so it is easy to import and use
+	var lodash = require('lodash');
+	var output = lodash.without([1, 2, 3], 1);
+	console.log(output);
+
+	//import and use three
+	//note: three module doesn't behave 'good'; it doesn't export anything in node, so I have to use webPackShims
+	THREE = require("three");
 
 	// Create an Angular module for this plugin
 	var module = require('ui/modules').get('tr-k4p-clock');

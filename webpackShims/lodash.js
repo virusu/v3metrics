@@ -5,6 +5,7 @@
  * var _ = require('lodash');
  */
 
+console.log('inside lodash webpackShim');
 var _ = require('node_modules/lodash/index.js').runInContext();
 require('ui/utils/lodash-mixins/string')(_);
 require('ui/utils/lodash-mixins/lang')(_);
