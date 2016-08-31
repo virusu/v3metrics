@@ -13,8 +13,9 @@ define(function(require) {
 	console.log(output);
 
 	//import and use three
-	//note: three module doesn't behave 'good'; it doesn't export anything in node, so I have to use webPackShims
+	//note: three node module doesn't behave 'good';
 	THREE = require("three");
+	console.log(THREE.REVISION)
 
 	// Create an Angular module for this plugin
 	var module = require('ui/modules').get('tr-k4p-clock');
@@ -29,6 +30,50 @@ define(function(require) {
 
 	});
 
+	module.controller('3DCubeController', function($scope){
+
+
+    var camera, scene, renderer;
+    var geometry, material, mesh;
+
+    init();
+    animate();
+
+    function init() {
+
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+        camera.position.z = 1000;
+
+        scene = new THREE.Scene();
+
+        geometry = new THREE.BoxGeometry(200, 200, 200);
+        material = new THREE.MeshBasicMaterial({
+            color: 0xff0000,
+            wireframe: true
+        });
+
+        mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        document.body.appendChild(renderer.domElement);
+
+    }
+
+    function animate() {
+
+        requestAnimationFrame(animate);
+
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.02;
+
+        renderer.render(scene, camera);
+
+    }
+    
+	});
 	// The provider function must return the visualization
 	function ClockProvider(Private) {
 		// Load TemplateVisType
