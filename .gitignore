@@ -21,7 +21,6 @@ target
 /esvm
 .htpasswd
 .eslintcache
-plugins
 data
 disabledPlugins
 webpackstats.json
