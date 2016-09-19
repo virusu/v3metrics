@@ -9,7 +9,6 @@
 // # Code
 
 /** @namespace */
-var THREEx		= THREEx 		|| {};
 THREEx.FullScreen	= THREEx.FullScreen	|| {};
 
 /**
