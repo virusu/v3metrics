@@ -10,7 +10,12 @@ var THREEDC={
 	offset : new THREE.Vector3()
 };
 
-THREEDC.initializer=function(camera,scene,renderer) {
+var container;
+var controls;
+
+THREEDC.initializer=function(camera,scene,renderer, controls) {
+	container = document.body;
+	controls = controls;
 	THREEDC.camera=camera;
 	THREEDC.scene=scene;
 	THREEDC.renderer=renderer;
@@ -258,7 +263,9 @@ THREEDC.baseMixin = function (_chart) {
 
 			THREEDC.domEvents.bind(mesh, 'mouseout', function(object3d){ 
 				//restores the original color
-				mesh.material.emissive.setHex(mesh.currentHex);
+				if(mesh.type!='Line'){
+					mesh.material.emissive.setHex(mesh.currentHex);
+				}
 			});
 
 			//THREEDC.domEvents.bind(mesh, 'click', function(object3d){ 
@@ -354,9 +361,11 @@ THREEDC.baseMixin = function (_chart) {
 		}
 
 		function changeMeshColor (mesh) {
-		 // mesh.material.color.setHex(0xffff00);
-		  mesh.currentHex=mesh.material.emissive.getHex();
-		  mesh.material.emissive.setHex(mesh.origin_color);
+			if(mesh.type!='Line'){
+			 	 mesh.currentHex=mesh.material.emissive.getHex();
+		 		 mesh.material.emissive.setHex(mesh.origin_color);
+			}
+
 		}
     }
 
@@ -996,6 +1005,78 @@ THREEDC.barsChart = function (location){
     return _chart;
 }
 
+THREEDC.pointsCloudChart = function (location){
+
+	if(location==undefined){
+		location=[0,0,0];
+	}
+
+	var _chart = THREEDC.baseMixin({});
+
+	THREEDC.allCharts.push(_chart);
+
+	_chart.getPoints=function(points){
+		if(!points){
+			console.log('argument needed')
+			return;
+		}
+		_chart._points=points;
+		return _chart;
+	}
+
+
+	_chart.build = function() {
+	   if(_chart._points===undefined){
+	   	console.log('You must define an array of data for this chart');
+	   	return;
+	   }
+	var tLoader = new THREE.TextureLoader();
+    var particleTexture= tLoader.load("/images/spark.png");
+
+	particleGroup = new THREE.Object3D();
+	particleAttributes = { startSize: [], startPosition: [], randomness: [] };
+	
+	var totalParticles = 200;
+	var radiusRange = 10;
+	for( var i = 0; i < _chart._points.length; i++ ) 
+	{
+	    var spriteMaterial = new THREE.SpriteMaterial( { map: particleTexture, color: 0xffffff } );
+		
+		var sprite = new THREE.Sprite( spriteMaterial );
+		sprite.scale.set( 3, 3, 1.0 ); // imageWidth, imageHeight
+		sprite.position.set( _chart._points[i].x, _chart._points[i].y, _chart._points[i].z );
+		sprite.coordis=[_chart._points[i].x,_chart._points[i].y,_chart._points[i].z];
+		// for a cube:
+		// sprite.position.multiplyScalar( radiusRange );
+		// for a solid sphere:
+		// sprite.position.setLength( radiusRange * Math.random() );
+		// for a spherical shell:
+		//sprite.position.setLength( radiusRange * (Math.random() * 0.1 + 0.9) );
+		
+		// sprite.color.setRGB( Math.random(),  Math.random(),  Math.random() ); 
+		sprite.material.color.setHSL( Math.random(), 0.9, 0.7 ); 
+		
+		// sprite.opacity = 0.80; // translucent particles
+		sprite.material.blending = THREE.AdditiveBlending; // "glowing" particles
+		THREEDC.domEvents.bind(sprite, 'mouseover', function(object3d){ 
+			console.log(sprite.coordis);
+		});
+		//particleGroup.add( sprite );
+		// add variable qualities to arrays, if they need to be accessed later
+		particleAttributes.startPosition.push( sprite.position.clone() );
+		particleAttributes.randomness.push( Math.random() );
+		scene.add( sprite );
+	}
+	//particleGroup.position.y = 50;
+	
+
+
+
+    }    
+   
+    return _chart;
+}
+
 THREEDC.simpleLineChart= function (coords) {
 
 	this.coords=coords;
@@ -1387,7 +1468,6 @@ function onMouseMove( event ) {
   // calculate THREEDC.mouse position in normalized device coordinates
   // (-1 to +1) for both components
 
-
   THREEDC.mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
   THREEDC.mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;   
 
@@ -1409,7 +1489,5 @@ function onMouseMove( event ) {
     return;
   }
 }
+
 module.exports = THREEDC;
-
-
-

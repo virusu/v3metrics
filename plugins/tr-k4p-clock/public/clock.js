@@ -121,8 +121,8 @@ function init () {
    renderer = new THREE.WebGLRenderer( {antialias:true} );
    renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
    renderer.setClearColor( 0xd8d8d8 );
-
-   document.body.appendChild(renderer.domElement);
+   container = document.body;
+   container.appendChild(renderer.domElement);
     ////////////
   // EVENTS //
   ////////////
@@ -182,7 +182,7 @@ function init () {
 
  //CUSTOM DASHBOARD//
 
-  THREEDC.initializer(camera,scene,renderer);
+  THREEDC.initializer(camera,scene,renderer, controls);
 
   var panel2=THREEDC.addPanel([0,0,0],4);
 
