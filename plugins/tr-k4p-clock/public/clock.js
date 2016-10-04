@@ -134,14 +134,6 @@ function init () {
     // toggle full-screen on given key press
   THREEx.FullScreen.bindKey({ charCode : 'm'.charCodeAt(0) });
 
-   //////////////
-   // CONTROLS //
-   //////////////
-
-   // move mouse and: left   click to rotate,
-   //                 middle click to zoom,
-   //                 right  click to pan
-   controls = new THREE.OrbitControls( camera, renderer.domElement );
 
    ///////////
    // LIGHT //
@@ -182,7 +174,7 @@ function init () {
 
  //CUSTOM DASHBOARD//
 
-  THREEDC.initializer(camera,scene,renderer, controls);
+  THREEDC.initializer(camera,scene,renderer, document.body);
 
   var panel2=THREEDC.addPanel([0,0,0],4);
 
@@ -254,8 +246,8 @@ function render()
 
 function update()
 {
-  controls.update();
-  //stats.update();
+  THREEDC.controls.update();
+  stats.update();
 }
 
 
