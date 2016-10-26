@@ -3,7 +3,7 @@
 define(function(require) {
 
 	// Include our custom CSS (LESS also works)
-  require('plugins/tr-k4p-clock/clock.css');
+  require('plugins/tr-k4p-clock/clock.less');
   require('plugins/tr-k4p-clock/scm-commits.json');
 	//checking a random external module, to see if it works #TODO: delete
 	//note: lodash module behaves 'good'; it exports objects, so it is easy to import and use
