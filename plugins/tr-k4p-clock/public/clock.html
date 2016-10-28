@@ -1,12 +1,14 @@
-<div id="ThreeJS" ng-controller="ThreeDCController">
-			<div class="threedccontainer"></div>
-
-</div>
-
 <div class="clockVis" ng-controller="ClockController">
 	{{ time | date:vis.params.format }}
 </div>
 
 <canvas id="glcanvas" width="640" height="480" ng-controller="3DCubeController">
-	   Tu navegador parece no soportar el elemento HTML5 <code>&lt;canvas&gt;</code>.
+	   	<div class="3Dcubecontainer">
+		<div class="3Dcubechart"> <div> Helooo </div></div>
+		</div>
 </canvas>
+
+<div id="ThreeJS" ng-controller="ThreeDCController">
+		<div class="threedccontainer"></div>
+
+</div>

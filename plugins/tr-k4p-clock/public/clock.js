@@ -253,7 +253,7 @@ function update()
 
 	});
 
-	module.controller('3DCubeController', function($scope){
+	module.controller('3DCubeController', function($scope, $element){
 
 
     var camera, scene, renderer;
@@ -261,6 +261,7 @@ function update()
 
     init();
     animate();
+
 
     function init() {
 
@@ -278,11 +279,17 @@ function update()
         mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
 
+        var idchart = $element.children().find(".3Dcubechart");
+        console.log(idchart);
+
         renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
 
-        document.body.appendChild(renderer.domElement);
+        //doesn't work as expected
+        idchart[0].appendChild(renderer.domElement);
 
+        //does work as expected
+        document.body.appendChild(renderer.domElement);
     }
 
     function animate() {
