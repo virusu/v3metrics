@@ -3,7 +3,7 @@ export default function (kibana) {
 	return new kibana.Plugin({
 		uiExports: {
 			visTypes: [
-				'plugins/vr_charts/vr_vis'
+				'plugins/k5p-c3/c3_vis'
       		]
     	}
   	});
