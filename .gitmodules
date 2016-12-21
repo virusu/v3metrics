@@ -1,0 +1,3 @@
+[submodule "plugins/3D_kibana_charts_vis"]
+	path = plugins/3D_kibana_charts_vis
+	url = https://github.com/virusu/3D_kibana_charts_vis.git
